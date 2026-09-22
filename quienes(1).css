@@ -1,0 +1,174 @@
+/* ====== 1. Reseteo básico ======
+   Quitamos márgenes/paddings por defecto del navegador para tener
+   control total del diseño desde cero. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2933;
+    line-height: 1.5;
+}
+
+/* ====== 2. Encabezado ====== */
+header {
+    background-color: #10375c;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+header hr {
+    margin: 12px auto;
+    width: 60px;
+    border: 2px solid #91d6af;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+nav ul li {
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+nav ul li:hover {
+    background-color: #0c0c0c;
+}
+
+/* ====== 3. Contenedor general ====== */
+.padre {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ====== 4. Bloques de tarjetas (hijo, hijo2, hijo3) ======
+   Usamos la misma clase de "tarjeta" para los tres bloques porque
+   visualmente cumplen el mismo rol: título + imagen + texto. */
+.hijo,
+.hijo2,
+.hijo3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.nieto,
+.nieto2,
+.nieto3 {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.nieto h2,
+.nieto2 h2,
+.nieto3 h2 {
+    color: #10375c;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.nieto img,
+.nieto2 img,
+.nieto3 img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.nieto p,
+.nieto2 p,
+.nieto3 p {
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* ====== 5. Galería de fotos (hijo4) ======
+   Aquí vive el slider que se mueve con JavaScript. */
+.hijo4 {
+    text-align: center;
+    background-color: #10375c;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(240, 232, 232, 0.89);
+}
+
+.hijo4 h2 {
+    color: #d6dce1;
+    margin-bottom: 16px;
+}
+
+.slider {
+    max-width: 600px;
+    height: 380px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Esta transición es la que crea el efecto de "aparecer" suave
+       cada vez que JavaScript cambia el src de la imagen. */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Clase que JavaScript añade/quita para el efecto de desvanecido */
+.slider img.fade-out {
+    opacity: 0;
+}
+
+.slider-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.slider-controles button {
+    background-color: #407ab0;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.slider-controles button:hover {
+    background-color: #4c9f70;
+}
+
+#contador {
+    font-weight: bold;
+    color: #e7eaec;
+}

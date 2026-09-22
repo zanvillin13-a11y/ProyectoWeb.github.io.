@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="productos(1).css">
+</head>
+<body>
+
+    <header>
+        <h1>Ventas Online</h1>
+        <hr>
+        <nav class="menu-principal">
+            <ul>
+                <li>Ventas en línea</li>
+                <li>Venta por catálogo</li>
+                <li>Ventas por delivery</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ============ Botón flotante del carrito ============ -->
+    <!-- Está fuera de la tabla porque debe verse siempre, sin importar
+         cuánto scroll haga el usuario (position: fixed en el CSS). -->
+    <button id="btn-abrir-carrito" class="btn-carrito-flotante">
+        🛒 Carrito <span id="contador-carrito">0</span>
+    </button>
+
+    <!-- Panel lateral del carrito, oculto hasta que se abre con JS -->
+    <aside id="panel-carrito" class="panel-carrito">
+        <div class="panel-carrito-header">
+            <h2>Tu carrito</h2>
+            <button id="btn-cerrar-carrito" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        <ul id="lista-carrito" class="lista-carrito">
+            <!-- JavaScript llena esta lista dinámicamente -->
+        </ul>
+        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío.</p>
+        <div class="panel-carrito-footer">
+            <p>Total: <span id="total-carrito">S/ 0.00</span></p>
+            <button id="btn-vaciar-carrito">Vaciar carrito</button>
+        </div>
+    </aside>
+
+    <main>
+        <h2 class="titulo-tabla">Catálogo de discos duros</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Capacidad</th>
+                    <th>Tipo</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A001</td>
+                    <td>Disco Duro Interno</td>
+                    <td>Western Digital</td>
+                    <td>1 TB</td>
+                    <td>SSD</td>
+                    <td>S/ 160.00</td>
+                    <td>
+                        <img class="img-producto" src="disco/SDd.jpg" data-full="disco/SDd.jpg" alt="Disco SSD Western Digital 1TB">
+                    </td>
+                    <td>
+                        <button class="btn-agregar" data-id="A001" data-nombre="Disco Duro Interno SSD 1TB" data-precio="160.00">
+                            Agregar al carrito
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>A002</td>
+                    <td>Disco Mecánico</td>
+                    <td>Western Digital</td>
+                    <td>1 TB</td>
+                    <td>HDD</td>
+                    <td>S/ 150.00</td>
+                    <td>
+                        <img class="img-producto" src="disco/discoduro1tb.webp" data-full="disco/discoduro1tb.webp" alt="Disco HDD Western Digital 1TB">
+                    </td>
+                    <td>
+                        <button class="btn-agregar" data-id="A002" data-nombre="Disco Mecánico HDD 1TB" data-precio="150.00">
+                            Agregar al carrito
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>A003</td>
+                    <td>Disco Mecánico</td>
+                    <td>Western Digital</td>
+                    <td>2 TB</td>
+                    <td>HDD</td>
+                    <td>S/ 220.00</td>
+                    <td>
+                        <img class="img-producto" src="disco/discoduro1tb.webp" data-full="disco/discoduro1tb.webp" alt="Disco HDD Western Digital 2TB">
+                    </td>
+                    <td>
+                        <button class="btn-agregar" data-id="A003" data-nombre="Disco Mecánico HDD 2TB" data-precio="220.00">
+                            Agregar al carrito
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>A004</td>
+                    <td>Disco Duro Interno</td>
+                    <td>Western Digital</td>
+                    <td>500 GB</td>
+                    <td>SSD</td>
+                    <td>S/ 110.00</td>
+                    <td>
+                        <img class="img-producto" src="disco/SDd.jpg" data-full="disco/SDd.jpg" alt="Disco SSD Western Digital 500GB">
+                    </td>
+                    <td>
+                        <button class="btn-agregar" data-id="A004" data-nombre="Disco Duro Interno SSD 500GB" data-precio="110.00">
+                            Agregar al carrito
+                        </button>
+                    </td>
+                </tr>
+                <!--
+                    ¿Cómo agregar un producto nuevo?
+                    Copia un bloque <tr> ... </tr> completo y cambia:
+                    - data-id: un código que no se repita (A005, A006...)
+                    - data-nombre y data-precio: deben coincidir con lo que
+                      escribes en las celdas <td>, porque JS lee esos atributos.
+                -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- ============ Modal para ampliar la imagen (efecto lightbox) ============ -->
+    <div id="modal-imagen" class="modal-imagen">
+        <button id="btn-cerrar-modal" class="modal-cerrar" aria-label="Cerrar imagen">&times;</button>
+        <img id="modal-imagen-grande" src="" alt="Vista ampliada del producto">
+    </div>
+
+    <script src="productos(1).js"></script>
+</body>
+</html>

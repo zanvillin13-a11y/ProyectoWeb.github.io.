@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>Mi página web en construcción</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li>¿Quíenes somos?</li>
+                <li>Contáctenos</li>
+                <li>Nuestros productos</li>
+                <li>Sucursales</li>
+                <li>Redes sociales </li>
+            </ul>
+        </nav>
+    </header>
+<div class="padre">
+    <div class="hijo">
+        <div class="nieto">
+            <h2>Marketin Digital</h2>
+            <img src="Fotos/imagen4.jpg" alt="">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, a? Ab fugit, aperiam aspernatur molestiae nulla in vitae rem fugiat est! Nobis perspiciatis praesentium at voluptas odit repudiandae cupiditate totam.</p>
+        </div>
+
+        <div class="nieto">
+            <h2>Marketin Digital</h2>
+            <img src="Fotos/Imagen2.jpg" alt="">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, a? Ab fugit, aperiam aspernatur molestiae nulla in vitae rem fugiat est! Nobis perspiciatis praesentium at voluptas odit repudiandae cupiditate totam.</p>
+        </div>
+
+        <div class="nieto">
+            <h2>Marketin Digital</h2>
+            <img src="Fotos/imagen3.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur cumque nemo earum architecto, doloribus nostrum omnis illo laudantium sint maiores, tenetur quibusdam neque? Repudiandae repellendus atque, esse asperiores porro at!</p>
+        </div>
+        <div class="pie">
+            <p>Derechos Reservados</p>       
+         </div>
+
+
+</div>
+
+
+
+</html>
